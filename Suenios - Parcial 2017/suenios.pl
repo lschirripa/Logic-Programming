@@ -25,8 +25,14 @@ suenio(macarena, cantante(10000)).
 equipoChico(arsenal).
 equipoChico(aldosivi).
 
-persona(Persona):- 
-    cree(Persona,_).
+%persona(Persona)
+persona(gabriel).
+persona(juan).
+persona(macarena).
+persona(franco).
+persona(lucho).
+
+    
 
 
 
@@ -97,3 +103,35 @@ suenioPuro(cantante(_)).
 %PUNTO 4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+padre(tatara, bisa).
+padre(bisa, abu).
+padre(abu, padre).
+padre(padre, hijo).
+
+ancestro(Padre, Persona):- 
+    padre(Padre, Persona).
+ancestro(Ancestro, Persona):-
+    padre(Padre, Persona),
+    ancestro(Ancestro, Padre).
+
+enfermo(campanita).
+enfermo(reyesMagos).
+enfermo(conejoDePascua).
+
+amigos(campanita, reyesMagos).
+amigos(campanita, conejoDePascua).
+amigos(conejoDePascua, cavenaghi).
+
+alegra(Persona, Personaje):-
+    tieneQuimica(Persona, Personaje),
+    not(enfermo(Personaje)).
+alegra(Persona, Personaje):-
+    tieneQuimica(Persona, Personaje),
+    not(enfermo(Personaje)),
+    personajeBackUp(Personaje, Amigo).
+
+personajeBackUp( Personaje, Amigo):-
+    amigos(Personaje, Amigo).
+personajeBackUp(AmigoIndirecto, Amigo):-
+    amigos(Personaje,Amigo),
+    personajeBackUp(AmigoIndirecto, Personaje).
