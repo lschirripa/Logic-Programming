@@ -1,3 +1,8 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%BASE DE CONOCIMIENTOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 cree(gabriel, campanita).
 cree(gabriel, magoDeOz).
 cree(gabriel, cavenaghi).
@@ -6,9 +11,12 @@ cree(macarena, reyesMagos).
 cree(macarena, magoCapria).
 cree(macarena, campanita).
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PUNTO 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % suenio(Persona, Functor) -> functor: cantante(CantidadDeDiscos) | futbolista(Equipo) | ganarLoteria([Numeros]])
-
+%suenio(Persona, TipoDeSuenio)
 suenio(gabriel, ganarLoteria([5,9])).
 suenio(gabriel, futbolista(arsenal)).
 suenio(juan, cantante(10000)).
@@ -19,6 +27,12 @@ equipoChico(aldosivi).
 
 persona(Persona):- 
     cree(Persona,_).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PUNTO 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 personaAmbiciosa(Persona):-
     distinct(persona(Persona)),
@@ -53,4 +67,33 @@ cuentaRandom(NumerosApostados,Total):-
     length(NumerosApostados,CantNumsApostados),
     Total is CantNumsApostados*10.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PUNTO 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%tieneQuimica(Persona, Personaje)
+tieneQuimica(Persona, Personaje):-
+    cree(Persona, Personaje),
+    requerimientoEspecial(Persona).
+tieneQuimica(Persona, campanita):-
+    cree(Persona, campanita),
+    requerimientoEspecialDeCampanita(Persona).
+
+requerimientoEspecial(Persona):-
+    suenio(Persona, Suenio),
+    suenioPuro(Suenio),
+    not(personaAmbiciosa(Persona)).
+
+requerimientoEspecialDeCampanita(Persona):-
+    dificultadDeSuenio(Persona,Dificultad),
+    Dificultad < 5.
+
+suenioPuro(futbolista(_)).
+suenioPuro(cantante(_)).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PUNTO 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
