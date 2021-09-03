@@ -26,14 +26,18 @@ Por ejemplo, para el caso de la noticia "Primicia" de Elaine Benes, George Const
 
 
 Si bien George hace de las suyas, sabemos que Elaine Benes no roba las noticias de Art Vandelay.
-Punto 1 (4 Puntos)
+
+
+## - Punto 1 (4 Puntos)
 Modelar en la base de conocimiento los requerimientos anteriormente descritos. En caso de no ser necesario hacer nada, explique qué concepto teórico está relacionado y justifique su respuesta.
-Punto 2 (3 Puntos)
+
+
+## - Punto 2 (3 Puntos)
 Ahora empezamos a pensar en qué sitios de noticias podríamos publicar. Entonces nos interesa saber si un artículo es amarillista. Esto ocurre si el título es "Primicia" o si la persona involucrada en dicha noticia está complicada. Los deportistas con menos de tres títulos, los personajes de farándula que tienen problemas contra Jerry Seinfeld y todos los políticos están complicados.
 
 Por ejemplo el artículo de Elaine Benes que dice "Primicia" es amarillista, el artículo de Bob Sacamano que hizo sobre David Puddy ya que tiene cero títulos y su otra publicación de política con Cosmo Kramer también lo son. 
 
-Punto 3 (4 Puntos)
+## - Punto 3 (4 Puntos)
 
 También evaluamos a los autores. Entonces queremos saber 
 
@@ -51,7 +55,7 @@ Por ejemplo Bob Sacamano tiene una noticia de 10 visitas. George Costanza corre 
 
 Nota: Todos los predicados deben ser inversibles.   
 
-Punto 4 (3 puntos)
+## - Punto 4 (3 puntos)
 ¡Excelente! Ahora necesitamos una Edición loca: queremos armar un resumen de la semana con una combinación posible de artículos amarillistas que no superen las 50 visitas en total. El predicado debe ser inversible.
 
 Por ejemplo:
