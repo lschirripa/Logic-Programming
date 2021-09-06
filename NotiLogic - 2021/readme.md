@@ -1,4 +1,4 @@
-### NotiLogic
+# NotiLogic
 
 Un grupo de periodistas quiere armar su diario NotiLogic, entonces nos piden modelar en prolog una solución para administrar sus noticias. Para comenzar sabemos que las noticias tienen un autor, un artículo y una cantidad de visitas. 
 
